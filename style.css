@@ -1,0 +1,30 @@
+.row {
+	display: flex;
+}
+
+.cell{
+	width: 50px;
+	height: 50px;
+	margin: 5px;
+	color: white;
+}
+
+.alive {
+	background-color: blue;
+}
+
+.die {
+	background-color: black;
+}
+
+.start {
+	background-color: green;
+}
+
+.target {
+	background-color: gold;
+}
+
+.road {
+	background-color: pink;
+}

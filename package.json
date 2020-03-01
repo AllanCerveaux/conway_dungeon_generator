@@ -1,0 +1,13 @@
+{
+  "name": "conway_dungeon",
+  "version": "0.0.1",
+  "description": "Generate dungeon room with cellular automata",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html"
+  },
+  "keywords": [],
+  "author": "AllanCerveaux",
+  "license": "MITgit "
+}
