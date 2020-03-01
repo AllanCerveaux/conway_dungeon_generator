@@ -1,8 +1,8 @@
 import {
-		getRandomInt,
-		initializeBoard,
-		checkNeighborIsAlive,
-		$
+	getRandomInt,
+	initializeBoard,
+	checkNeighborIsAlive,
+	$
 } from './utils';
 
 export default class Dungeon 
@@ -13,7 +13,7 @@ export default class Dungeon
 		this.startRoom;
 		this.randY;
 		this.randX;
-
+		
 		this.board = initializeBoard(this.width, this.height, { random: true })
 		
 		this.generate()
@@ -23,12 +23,12 @@ export default class Dungeon
 		this.setStartRoom();
 		const check = checkNeighborIsAlive(this.board, this.startRoom.x, this.startRoom.y)
 	}
-
+	
 	setStartRoom(){
 		this.randX = getRandomInt(this.height);
 		this.randY = getRandomInt(this.width);
 		this.startRoom = this.board.cells[this.randY][this.randX]
-
+		
 		do {
 			this.randX = getRandomInt(this.height);
 			this.randY = getRandomInt(this.width);
@@ -39,7 +39,7 @@ export default class Dungeon
 		this.startRoom.x = this.randX
 		this.startRoom.y = this.randY
 	}
-
+	
 	drawToHtml(){
 		let rowElm
 		let cellElm
@@ -48,7 +48,7 @@ export default class Dungeon
 		
 		$("body").append(boardDisplay)
 		boardDisplay.classList.add('boardDisplay')
-
+		
 		this.board.cells.map((row, i) => {
 			rowElm = document.createElement('div')
 			rowElm.classList.add('row')
@@ -58,7 +58,7 @@ export default class Dungeon
 				cellElm = document.createElement('div')
 				cellElm.classList.add('cell')
 				cellElm.innerHTML = index
-	
+				
 				if(cell.startRoom) cellElm.classList.add('start')
 				if(cell.alive){
 					cellElm.classList.add('alive')
